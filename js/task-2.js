@@ -25,4 +25,16 @@ const images = [
   }
 ];
 
+const listOfImages = images
+.map(image => `<li><img src = ${image.url} alt = "${image.alt}"></li>`)
+.join('');
+
+
+const gallery = document.querySelector('.gallery');
+gallery.insertAdjacentHTML('afterbegin', listOfImages);
+
+const listTags = document.querySelectorAll('.gallery li');
+listTags.forEach(listTag => listTag.setAttribute('class', 'gallery-item'));
+
+
 
